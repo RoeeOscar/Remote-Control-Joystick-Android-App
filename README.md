@@ -51,6 +51,7 @@ At the end, the Model disconnects from the Server.
 >```--telnet=socket,in,10,127.0.0.1,6400,tcp```
 
 You can also use another available port instead of 6400.
+
 4. Get your **IPv4 Address**:
 
 * Open the **Command Line**.
