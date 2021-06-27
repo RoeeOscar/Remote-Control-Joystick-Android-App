@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.android_app_remote_control_joystick.viewModel.MyViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.MainActivity">
+
+
+        <TextView
+            android:id="@+id/aileron1TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="17dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/aileron"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/joystick"
+            app:layout_constraintEnd_toStartOf="@+id/plusImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/disconnect_button" />
+
+        <Button
+            android:id="@+id/disconnect_button"
+            android:layout_width="411dp"
+            android:layout_height="41dp"
+            android:layout_marginBottom="56dp"
+            android:layout_weight="0.5"
+            android:backgroundTint="#88BF67"
+            android:enabled="false"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/disconnected"
+            app:layout_constraintBottom_toTopOf="@+id/joystick"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/connect_button"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/IP_Address"
+            style="@style/editTextStyle"
+            android:layout_marginTop="40dp"
+            android:layout_weight="0.5"
+            android:autofillHints="IP"
+            android:fontFamily="@font/roboto"
+            android:hint="@string/ip_address"
+            android:inputType="text"
+            android:textColorHint="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/Port_Number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="LabelFor" />
+
+        <EditText
+            android:id="@+id/Port_Number"
+            style="@style/editTextStyle"
+            android:layout_marginTop="8dp"
+            android:layout_weight="0.5"
+            android:autofillHints="Port"
+            android:fontFamily="@font/roboto"
+            android:hint="@string/port_number"
+            android:inputType="number"
+            android:textColorHint="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/connect_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/IP_Address"
+            tools:ignore="LabelFor,MissingConstraints,TextFields" />
+
+        <Button
+            android:id="@+id/connect_button"
+            android:layout_width="411dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="6dp"
+            android:layout_weight="0.5"
+            android:backgroundTint="#88BF67"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/connect"
+            app:layout_constraintBottom_toTopOf="@+id/disconnect_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Port_Number"
+            tools:ignore="MissingConstraints" />
+
+        <SeekBar
+            android:id="@+id/throttle_bar"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="336dp"
+            android:layout_marginEnd="330dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="0.1"
+            android:max="100000"
+            android:progressTint="#000000"
+            android:rotation="270"
+            android:thumb="@android:drawable/ic_media_play"
+            android:progressBackgroundTint="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/rudder_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/connect_button"
+            tools:ignore="MissingConstraints" />
+
+        <SeekBar
+            android:id="@+id/rudder_bar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="166dp"
+            android:layout_marginBottom="166dp"
+            android:layout_weight="0.5"
+            android:max="200000"
+            android:progress="100000"
+            android:progressTint="#000000"
+            android:thumb="@android:drawable/ic_menu_compass"
+            android:progressBackgroundTint="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/throttle_bar"
+            tools:ignore="MissingConstraints" />
+
+
+        <TextView
+            android:id="@+id/rudder_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/rudder"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rudder_bar" />
+
+        <TextView
+            android:id="@+id/throttle_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="330dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/throttle"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/throttle_bar" />
+
+        <com.example.android_app_remote_control_joystick.view.Joystick
+            android:id="@+id/joystick"
+            android:layout_width="341dp"
+            android:layout_height="324dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginBottom="9dp"
+            app:layout_constraintBottom_toTopOf="@+id/rudder_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/throttle_bar"
+            app:layout_constraintTop_toBottomOf="@+id/connect_button"
+            app:layout_constraintVertical_bias="0.475" />
+
+        <ImageView
+            android:id="@+id/plusImage"
+            android:layout_width="35dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="5dp"
+            android:contentDescription="@string/aileron_and_elevator"
+            android:rotation="45"
+            app:layout_constraintBottom_toTopOf="@+id/joystick"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/disconnect_button"
+            app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"
+            app:tint="#000000" />
+
+        <TextView
+            android:id="@+id/aileron2TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="130dp"
+            android:layout_marginBottom="17dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/aileron"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/joystick"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/plusImage"
+            app:layout_constraintTop_toBottomOf="@+id/disconnect_button" />
+
+        <TextView
+            android:id="@+id/elevator1TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="330dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/elevator"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/joystick"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/plusImage" />
+
+        <TextView
+            android:id="@+id/elevator2textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/elevator"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/plusImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/disconnect_button" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="342dp"
+            android:layout_height="28dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/flightgear_remote_control_joystick"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/IP_Address"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Android-App-Remote-Control-Joystick</string>
+    <string name="ip_address">Enter IP Address</string>
+    <string name="port_number">Enter Port Number</string>
+    <string name="connect">Connect to FlightGear</string>
+    <string name="rudder_bar">Rudder Bar</string>
+    <string name="throttle_bar">Throttle Bar</string>
+    <string name="rudder">Rudder</string>
+    <string name="throttle">Throttle</string>
+    <string name="disconnect_from_flightgear">Disconnect from FlightGear</string>
+    <string name="elevator">Elevator</string>
+    <string name="aileron">Aileron</string>
+    <string name="aileron_and_elevator">Aileron And Elevator</string>
+    <string name="disconnected">Disconnected</string>
+    <string name="flightgear_remote_control_joystick">FlightGear Remote Control Joystick</string>
+
+
+</resources>
