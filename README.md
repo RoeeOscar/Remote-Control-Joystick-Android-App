@@ -73,10 +73,10 @@ You can also use another available port instead of 6400.
 
 <a name="uml"></a>
 ## UML Diagram
-Here is the UML Diagram for the application:
+Here is the **UML Diagram** for the application:
 ![XML](https://user-images.githubusercontent.com/81086558/123558482-27a79c80-d79f-11eb-8b26-a28f4024af4a.png)
 
 
 <a name="video"></a>
 ## Video & Presentation
-You can watch a presentation and a demo for the application [here](https://www.youtube.com/watch?v=Cl4oZMBwgh0).
+You can watch a presentation and a demo for the application **[here](https://www.youtube.com/watch?v=Cl4oZMBwgh0)**.
