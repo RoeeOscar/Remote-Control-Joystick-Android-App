@@ -11,6 +11,8 @@
 5. [Video & Presenation](#video)
 <a name="about"></a>
 ## About the application
+The application is used for connecting to a FlightGear server and controlling the airplane by joystick and seek bars.
+
 The application is written in Kotlin. It uses MVVM (Model-View-ViewModel) architectural pattern, and also uses strategy design pattern and Fork-Join-Pool service.
 
 <a name="view"></a>
