@@ -15,6 +15,8 @@ The view includes two parts:
 
 The view passes its data to the viewModel.
 
+![image](https://user-images.githubusercontent.com/81086558/123554045-f15e2300-d786-11eb-8e37-b93c26d178d3.png)
+
 ### The ViewModel
 The ViewModel is used for passing data from the View to the Model by request.
 
