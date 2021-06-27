@@ -16,7 +16,7 @@ import java.net.InetAddress
 
 class MainActivity : AppCompatActivity() {
 
-    private var ipAddress: String = ""
+    private lateinit var inetAddress: InetAddress
     private var portNumber: Int = 0
     private var viewModel: MyViewModel? = null
 
@@ -35,9 +35,9 @@ class MainActivity : AppCompatActivity() {
         // Connect button listener.
         connectButton.setOnClickListener {
             try {
-                ipAddress = findViewById<EditText>(R.id.IP_Address).text.toString()
+                val ipAddress:String = findViewById<EditText>(R.id.IP_Address).text.toString()
                 portNumber = findViewById<EditText>(R.id.Port_Number).text.toString().toInt()
-                val inetAddress:InetAddress = InetAddress.getByName(ipAddress)
+                inetAddress = InetAddress.getByName(ipAddress)
                 connectButton.text = "Connected"
                 disconnectButton.text="Disconnect from FlightGear"
                 connectButton.isEnabled=false
@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
                         alertBuilder.setTitle("Wrong IP Address or Port Number")
                         alertBuilder.setMessage("Please enter correct IP Address and Port Number.")
 
-                        alertBuilder.setPositiveButton(android.R.string.ok) { dialog, which ->
+                        alertBuilder.setPositiveButton(android.R.string.ok) { _, _ ->
                             Toast.makeText(applicationContext,
                                 android.R.string.ok, Toast.LENGTH_SHORT).show()
                         }
